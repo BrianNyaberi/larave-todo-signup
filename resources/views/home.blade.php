@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-header">
-                    <a href="{{ route('todos.create') }}" class="btn btn-sm btn-outline-primary">Add Item</a>
+                    <a href="{{ route('todos.index') }}" class="btn btn-sm btn-outline-primary">Add Item</a>
                 </div>
 
                 <div class="card-body">
@@ -18,7 +18,22 @@
                         </div>
                     @endif
 
+                    <table class="table table-hover table-borderless">
+                        <thead>
+                            <th scope="col">Item</th>
+                            <th scope="col"></th>
+                        </thead>
 
+                        <tbody>
+                            <tr>
+                                <td>Get Mangoes</td>
+                                <td>
+                                    <a href="" class="btn btn-sm btn-outline-success">Edit</a>
+                                    <a href="" class="btn btn-sm btn-outline-danger">Delete</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
