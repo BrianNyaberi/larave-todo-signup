@@ -8,7 +8,7 @@
                 <div class="card-header">Add Item</div>
 
                 <div class="card-header">
-                    <a href="{{ route('todos.index') }}" class="btn btn-sm btn-outline-primary"><i class="fa fa-arrow-left"></i> Back home</a>
+                    <a href="{{ route('todos.store') }}" class="btn btn-sm btn-outline-primary"><i class="fa fa-arrow-left"></i> Back home</a>
                 </div>
 
                 <div class="card-body">
