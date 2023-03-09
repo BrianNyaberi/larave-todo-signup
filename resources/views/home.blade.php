@@ -25,13 +25,24 @@
                         </thead>
 
                         <tbody>
-                            <tr>
-                                <td>Get Mangoes</td>
-                                <td>
-                                    <a href="" class="btn btn-sm btn-outline-success">Edit</a>
-                                    <a href="" class="btn btn-sm btn-outline-danger">Delete</a>
-                                </td>
-                            </tr>
+                            
+                        @forelse ($todos as $todo)
+                                <tr>
+                                    @if ($todo->completed)
+                                        <td scope="row"><a href="{{ route('todo.edit', $todo->id) }}" style="color: black"><s>{{ $todo->title }}</s></a></td>
+                                    @else
+                                        <td scope="row"><a href="{{ route('todo.edit', $todo->id) }}" style="color: black">{{ $todo->title }}</a></td>
+                                    @endif
+                                    <td>
+                                        <a href="{{ route('todo.edit', $todo->id) }}" class="btn btn-sm btn-outline-success"><i class="fa fa-pencil-square-o"></i></a>
+                                        <a href="{{ route('todo.show', $todo->id) }}" class="btn btn-sm btn-outline-danger"><i class="fa fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    No Items Added!
+                                </tr>
+                            @endforelse
                         </tbody>
                     </table>
                 </div>
