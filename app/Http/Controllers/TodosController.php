@@ -26,7 +26,8 @@ class TodosController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $todos = Todo::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
+        return view('home', compact('todos'));
     }
 
     /**
